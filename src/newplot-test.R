@@ -13,3 +13,9 @@ ds <- do.call(rbind, lapply(split(df, df$gp), function(d) {
 ggplot(df, aes(gp, y)) +
   geom_point() +
   geom_point(data = ds, aes(y = mean), colour = 'red', size = 3)
+
+## add new commit, jitter to plot
+ggplot(df, aes(gp, y)) +
+  geom_jitter() +
+  geom_point(data = ds, aes(y = mean), colour = 'red', size = 3)
+
